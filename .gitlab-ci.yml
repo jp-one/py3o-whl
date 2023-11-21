@@ -1,0 +1,7 @@
+variables:
+  DOCKER_IMAGE: xcgd/py3o
+  TAG_MAJOR: "yes"
+
+include:
+- file: docker-build.gitlab-ci.yaml
+  project: xcg/ci-templates
