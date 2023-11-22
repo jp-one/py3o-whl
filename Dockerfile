@@ -79,13 +79,14 @@ EXPOSE 8765
 # Libreoffice
 RUN adduser --system --disabled-password --gecos "" --shell=/bin/bash libreoffice
 
+ADD wheelhouse /usr/local/wheelhouse
+
 # py3o fusion / py3o server
 RUN pip install \
 	--upgrade \
 	--use-wheel \
 	--no-index \
-	--find-links=https://wheelhouse.xcg.io/18.04/py3o.renderserver/ \
-	--find-links=https://wheelhouse.xcg.io/18.04/py3o.fusion/ \
+	--find-links=file:///usr/local/wheelhouse/py3o/ \
 	-r  /usr/local/src/pip_requirements.txt \
 	--system
 
