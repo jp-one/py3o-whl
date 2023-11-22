@@ -1,0 +1,10 @@
+version: '2'
+services:
+  py3o:
+    image: py3o
+    #container_name: "py3o"
+    build:
+      context: "../"
+      dockerfile: Dockerfile
+    # ports:
+    #   - "8765:8765"
