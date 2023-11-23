@@ -14,7 +14,7 @@
 	"service": "py3o",
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
-	"workspaceFolder": "/root",
+	"workspaceFolder": "/root"
 	// Set *default* container specific settings.json values on container create.
 	// "settings": {},
 	// Add the IDs of extensions you want installed when the container is created.
