@@ -68,5 +68,25 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 		msttcorefonts \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Install Japanese fonts
+# ###################################
+#   IPA FONT LICENSE AGREEMENT V1.0
+# https://moji.or.jp/ipafont/license/
+# ###################################
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends \
+		unzip \
+	&& apt-get clean && rm -rf /var/lib/apt/lists/*
+ADD archiveipa /usr/local/archiveipa
+RUN cd /usr/local/archiveipa \
+	# IPAmj Mincho Font
+    && unzip ipamjm00601.zip -d /usr/share/fonts/truetype/ipamjm0601 \
+    # IPAex Font（2 fonts）
+    && unzip IPAexfont00401.zip -d /usr/share/fonts/truetype/ipaexfont00401 \
+    # IPA Font（4 fonts）
+    && unzip IPAfont00303.zip -d /usr/share/fonts/truetype/ipafont00303 \
+    # Build font information cache files
+    && fc-cache -vf
+
 ENTRYPOINT ["/usr/bin/supervisord"]
 CMD ["-c", "/etc/supervisor/supervisord.conf", "-n"]
