@@ -14,14 +14,15 @@ py3o.fusionは、LibreOffice文書(Weriter)で作成したひな型ファイル�
 
 **クローンの取得**
 
-```
+```bash
 git clone --depth 1 https://github.com/jp-one/py3o-whl.git
 ```
 
 **コンテナの起動**
 
-```
-docker-compose -p py3o-whl -f ./py3o-whl/.devcontainer/docker-compose.yml up
+```bash
+cd py3o-whl/.devcontainer
+docker-compose -p py3o-whl -f docker-compose.yml -f py3o-ports.yml up
 ```
 
 # 起動確認

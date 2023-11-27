@@ -6,5 +6,5 @@ services:
     build:
       context: "../"
       dockerfile: Dockerfile
-    ports:
-      - "8765:8765"
+    # ports:
+    #   - "8765:8765"

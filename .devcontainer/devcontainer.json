@@ -7,20 +7,18 @@
 	"dockerComposeFile": [
 		"docker-compose.yml"
 	],
-	// Adding the forward port for VS Code IDE.
-	"forwardPorts": [8765],
 	// The 'service' property is the name of the service for the container that VS Code should
 	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
 	"service": "py3o",
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
-	"workspaceFolder": "/root"
+	"workspaceFolder": "/root",
 	// Set *default* container specific settings.json values on container create.
 	// "settings": {},
 	// Add the IDs of extensions you want installed when the container is created.
 	// "extensions": [],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [9000],
+	"forwardPorts": [8765]
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install -r requirements.txt",
 	// Comment out to connect as root instead.

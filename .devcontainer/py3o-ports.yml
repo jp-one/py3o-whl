@@ -1,0 +1,5 @@
+version: '2'
+services:
+  py3o:
+    ports:
+      - "8765:8765"
